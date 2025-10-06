@@ -68,7 +68,7 @@ directly connected to Mother Vegetable factories, providing core utilities.`
             </div>
             <div className="text-center">
               <p className="text-gray-400 text-sm mb-2">{t({ JP: 'コントラクトアドレス', EN: 'Contract Address' })}</p>
-              <p className="text-white font-bold text-lg">0x●●●●</p>
+              <p className="text-white font-bold text-lg">0x33a4bCb4e941dD13439A8F4F723580927c6D9800</p>
             </div>
           </div>
         </div>
