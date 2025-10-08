@@ -51,8 +51,8 @@ export default function Hero() {
             <Image
               src="/mazavege_logo_midori.png"
               alt="Mother Vegetable Logo"
-              width={150}
-              height={150}
+              width={140}
+              height={140}
               className="mx-auto"
               priority
             />
@@ -103,7 +103,7 @@ export default function Hero() {
 <div className="max-w-4xl mx-auto mb-12 px-0 sm:px-4">
   <div className="relative overflow-visible">
     <Image
-      src={language === 'EN' ? "/project-overview_en.png" : "/project-overview_ja.png"}
+      src={language === 'EN' ? "/project-overview_en.png" : "/project-overview_en.png"}
       alt="Mother Vegetable"
       width={800}
       height={533}
