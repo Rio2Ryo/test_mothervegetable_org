@@ -27,7 +27,7 @@ const nextConfig: NextConfig = {
 
   async rewrites() {
     return [
-      // A（mothervegetablemenu.vercel.app）を /achieve-howto 配下にプロキシ（既存）
+      // 既存: /achieve-howto → mothervegetablemenu.vercel.app
       {
         source: "/achieve-howto",
         destination: "https://mothervegetablemenu.vercel.app/achieve-howto",
@@ -37,7 +37,7 @@ const nextConfig: NextConfig = {
         destination: "https://mothervegetablemenu.vercel.app/achieve-howto/:path*",
       },
 
-      // ★ 新規追加：A（forever-htu.vercel.app）を /forever-howto 配下にプロキシ
+      // 既存: /forever-howto → forever-htu.vercel.app
       {
         source: "/forever-howto",
         destination: "https://forever-htu.vercel.app/forever-howto",
@@ -45,6 +45,16 @@ const nextConfig: NextConfig = {
       {
         source: "/forever-howto/:path*",
         destination: "https://forever-htu.vercel.app/forever-howto/:path*",
+      },
+
+      // ★ 追加: /confidence-howto → confidence-htu.vercel.app
+      {
+        source: "/confidence-howto",
+        destination: "https://confidence-htu.vercel.app/confidence-howto",
+      },
+      {
+        source: "/confidence-howto/:path*",
+        destination: "https://confidence-htu.vercel.app/confidence-howto/:path*",
       },
     ];
   },
