@@ -12,7 +12,7 @@ export default function CarbonCreditDownloadPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (password === 'mvt') {
+    if (password === 'mv123') {
       setIsAuthenticated(true)
       setError('')
     } else {
@@ -27,8 +27,8 @@ export default function CarbonCreditDownloadPage() {
     // ダウンロード処理をここに実装
     // 実際のファイルパスを指定してください
     const link = document.createElement('a')
-    link.href = '/files/carbon-credit-calculation.xlsx' // 実際のファイルパスに変更
-    link.download = 'carbon-credit-calculation.xlsx'
+    link.href = '/files/carbon-credit-calculation.pdf' // 実際のファイルパスに変更
+    link.download = 'carbon-credit-calculation.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
