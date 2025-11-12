@@ -128,6 +128,20 @@ the following can be created:`
 
                   <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '③カーボンクレジットの試算表', EN: '③Carbon Credit Estimate' })}</p>
                   <p className="text-white text-sm md:text-base">{t({ JP: 'SEF 1 unit / 26m x 16m x 10階建 は面積にすると約0.5 ヘクタールとなる', EN: 'SEF 1 unit / 26m x 16m x 10 floors equals approximately 0.5 hectares in area' })}</p>
+                
+                <p className="leading-relaxed text-sm md:text-base">
+                    {t({
+                      JP: `一般的な0.5ヘクタールの天然スギのCO2吸収量は年間約4ton\nSEFはその700倍のCO2吸収量により年間約2,800tonとなる`,
+                      EN: `General 0.5 hectare natural cedar CO2 absorption is about 4 tons per year\nSEF absorbs 700 times more CO2, approximately 2,800 tons per year`
+                    })}
+                  </p>
+                  <p className="leading-relaxed text-sm md:text-base">
+                    {t({
+                      JP: `一般的なカーボンクレジットの価格は1tonあたり約4,000円\nSEFは2,800ton x 4,000円 = 11,200,000円 / 年 の収益性がある`,
+                      EN: `General carbon credit price is about 4,000 yen per ton\nSEF has profitability of 2,800 tons x 4,000 yen = 11,200,000 yen / year`
+                    })}
+                  </p>
+                
                 </div>
 
                 
@@ -136,20 +150,7 @@ the following can be created:`
             </div>
             
           </div>
-          <div className="mt-6 space-y-3 text-white">
-                  <p className="leading-relaxed text-sm md:text-base">
-                    {t({
-                      JP: `※ 一般的な0.5ヘクタールの天然スギのCO2吸収量は年間約4ton\nSEFはその700倍のCO2吸収量により年間約2,800tonとなる`,
-                      EN: `※ General 0.5 hectare natural cedar CO2 absorption is about 4 tons per year\nSEF absorbs 700 times more CO2, approximately 2,800 tons per year`
-                    })}
-                  </p>
-                  <p className="leading-relaxed text-sm md:text-base">
-                    {t({
-                      JP: `※ 一般的なカーボンクレジットの価格は1tonあたり約4,000円\nSEFは2,800ton x 4,000円 = 11,200,000円 / 年 の収益性がある`,
-                      EN: `※ General carbon credit price is about 4,000 yen per ton\nSEF has profitability of 2,800 tons x 4,000 yen = 11,200,000 yen / year`
-                    })}
-                  </p>
-                </div>
+         
         </div>
 
 
