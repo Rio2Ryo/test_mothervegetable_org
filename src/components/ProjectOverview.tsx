@@ -141,7 +141,19 @@ the following can be created:`
                       EN: `General carbon credit price is about 4,000 yen per ton\nSEF has profitability of 2,800 tons x 4,000 yen = 11,200,000 yen / year`
                     })}
                   </p>
-                
+
+                  <div className="mt-4 text-center">
+                    <a
+                      href="/download/carbon-credit"
+                      className="text-white text-xs hover:text-green-400 transition-colors underline"
+                    >
+                      {t({
+                        JP: '金融機関向けカーボンクレジット試算表',
+                        EN: 'Carbon Credit Calculation Sheet for Financial Institutions'
+                      })}
+                    </a>
+                  </div>
+
                 </div>
 
                 
