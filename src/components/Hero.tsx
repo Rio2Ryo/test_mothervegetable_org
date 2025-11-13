@@ -129,7 +129,7 @@ export default function Hero() {
           <div className="space-y-3">
             <p className="text-lg md:text-xl text-[#4ade80] leading-relaxed">
               {t({
-                JP: '35億年前の地球のはじまりの植物',
+                JP: '35億年前の地球はじまりの植物',
                 EN: 'The vegetable from 3.5 billion years ago'
               })}
             </p>
