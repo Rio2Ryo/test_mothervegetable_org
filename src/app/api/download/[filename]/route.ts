@@ -18,6 +18,13 @@ export async function GET(
     }
     
     const filePath = join(process.cwd(), 'public', decodedFilename)
+    
+    console.log('Attempting to download:', {
+      filename,
+      decodedFilename,
+      filePath,
+      cwd: process.cwd()
+    })
 
     // ファイルを読み込む
     const fileBuffer = await readFile(filePath)
