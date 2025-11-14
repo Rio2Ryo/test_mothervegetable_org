@@ -33,7 +33,7 @@ export async function GET(
     const contentType = getContentType(decodedFilename)
 
     // BufferをUint8Arrayに変換（Next.js 15の要件）
-    const uint8Array = new Uint8Array(fileBuffer)
+    const uint8Array = new Uint8Array(fileBuffer.buffer, fileBuffer.byteOffset, fileBuffer.byteLength)
 
     // ダウンロードヘッダーを設定
     return new NextResponse(uint8Array, {
