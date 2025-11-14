@@ -8,25 +8,35 @@ export async function GET(
 ) {
   try {
     const { filename } = await params
-    const filePath = join(process.cwd(), 'public', filename)
+    
+    // ファイル名のURLデコード
+    const decodedFilename = decodeURIComponent(filename)
+    
+    // セキュリティチェック: パストラバーサル攻撃を防ぐ
+    if (decodedFilename.includes('..') || decodedFilename.includes('/')) {
+      return new NextResponse('Invalid filename', { status: 400 })
+    }
+    
+    const filePath = join(process.cwd(), 'public', decodedFilename)
 
     // ファイルを読み込む
     const fileBuffer = await readFile(filePath)
 
     // Content-Typeを決定
-    const contentType = getContentType(filename)
+    const contentType = getContentType(decodedFilename)
 
     // ダウンロードヘッダーを設定
     return new NextResponse(fileBuffer, {
       headers: {
         'Content-Type': contentType,
-        'Content-Disposition': `attachment; filename="${filename}"`,
+        'Content-Disposition': `attachment; filename="${decodedFilename}"`,
         'Content-Length': fileBuffer.length.toString(),
       },
     })
   } catch (error) {
     console.error('Download error:', error)
-    return new NextResponse('File not found', { status: 404 })
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+    return new NextResponse(`File not found: ${errorMessage}`, { status: 404 })
   }
 }
 
