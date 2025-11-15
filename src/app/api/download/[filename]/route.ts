@@ -32,8 +32,11 @@ export async function GET(
     // Content-Typeを決定
     const contentType = getContentType(decodedFilename)
 
+    // BufferをUint8Arrayに変換
+    const uint8Array = Uint8Array.from(fileBuffer)
+
     // ダウンロードヘッダーを設定
-    return new Response(fileBuffer, {
+    return new Response(uint8Array, {
       headers: {
         'Content-Type': contentType,
         'Content-Disposition': `attachment; filename="${decodedFilename}"`,
