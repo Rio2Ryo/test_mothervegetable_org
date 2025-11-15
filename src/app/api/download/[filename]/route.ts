@@ -32,14 +32,8 @@ export async function GET(
     // Content-Typeを決定
     const contentType = getContentType(decodedFilename)
 
-    // BufferをArrayBufferに変換（Next.js 15の要件）
-    const arrayBuffer = fileBuffer.buffer.slice(
-      fileBuffer.byteOffset,
-      fileBuffer.byteOffset + fileBuffer.byteLength
-    )
-
     // ダウンロードヘッダーを設定
-    return new NextResponse(arrayBuffer, {
+    return new NextResponse(fileBuffer, {
       headers: {
         'Content-Type': contentType,
         'Content-Disposition': `attachment; filename="${decodedFilename}"`,
