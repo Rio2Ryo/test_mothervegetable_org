@@ -168,17 +168,17 @@ we offer the following three types of Mother Vegetable products:`
 
                 </div>
 
-                <div className="mt-6">
-                  <video
-                    className="w-full md:w-1/2 rounded-lg mx-auto"
-                    controls
-                    playsInline
-                  >
-                    <source src="/BizAnime_2.mp4" type="video/mp4" />
-                  </video>
-                </div>
               </div>
 
+              <div className="mt-6">
+                <video
+                  className="w-full md:w-1/2 rounded-lg mx-auto"
+                  controls
+                  playsInline
+                >
+                  <source src="/BizAnime_2.mp4" type="video/mp4" />
+                </video>
+              </div>
             </div>
             
           </div>
