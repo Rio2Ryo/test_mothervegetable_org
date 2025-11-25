@@ -3,13 +3,11 @@
 import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 import CountdownTimer from '@/components/CountdownTimer'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Hero() {
-  const { t, language } = useLanguage()
+  const { t } = useLanguage()
   const [countdown, setCountdown] = useState('')
-  const [isMuted, setIsMuted] = useState(true)
-  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     const targetDate = new Date('2025-11-11T11:00:00Z') // UTC time
@@ -49,20 +47,6 @@ export default function Hero() {
       element.scrollIntoView({ behavior: 'smooth' })
     }
   }
-  const toggleMute = () => {
-    const video = videoRef.current
-    if (!video) return
-
-    const nextMuted = !isMuted
-    video.muted = nextMuted
-
-    if (video.paused) {
-      void video.play().catch(() => {})
-    }
-
-    setIsMuted(nextMuted)
-  }
-
 
   const downloadWhitepaper = () => {
     const link = document.createElement('a')
@@ -147,68 +131,6 @@ export default function Hero() {
             </p>
           </div>
         </div>
-
-      {/* Mother Vegetable Video */}
-      <div className="w-[80%] sm:w-[85%] md:w-[75%] lg:w-[60%] xl:w-[50%] max-w-2xl mx-auto mb-40 mt-32 px-0 sm:px-4">
-        <div className="relative overflow-hidden rounded-lg shadow-2xl">
-          <video
-            ref={videoRef}
-            className="w-full h-auto"
-            src="/mazavege_anime%231_fin.mp4"
-            autoPlay
-            loop
-            muted={isMuted}
-            playsInline
-          />
-          <button
-            onClick={toggleMute}
-            aria-label={
-              isMuted
-                ? language === 'JP'
-                  ? 'ミュート解除'
-                  : 'Unmute'
-                : language === 'JP'
-                ? 'ミュート'
-                : 'Mute'
-            }
-            className="absolute bottom-4 right-4 inline-flex items-center justify-center rounded-full bg-black/40 px-3 py-3 text-white backdrop-blur-md transition hover:bg-black/60"
-          >
-            {isMuted ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-5 w-5"
-              >
-                <path d="M4 9v6h3l4 3V6l-4 3H4z" />
-                <line x1="16" y1="9" x2="20" y2="13" />
-                <line x1="20" y1="9" x2="16" y2="13" />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-5 w-5"
-              >
-                <path d="M4 9v6h3l4 3V6l-4 3H4z" />
-                <path d="M16 9a4 4 0 0 1 0 6" />
-                <path d="M18.5 7.5a7 7 0 0 1 0 9" />
-              </svg>
-            )}
-          </button>
-        </div>
-      </div>
-
-
       </div>
     </section>
   )

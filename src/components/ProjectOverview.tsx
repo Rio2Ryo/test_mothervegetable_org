@@ -82,16 +82,15 @@ we offer the following three types of Mother Vegetable products:`
                   <p className="text-white text-sm md:text-base">{t({ JP: '化学物質を一切使用しない高タンパク質の魚貝類の養殖。', EN: 'Aquaculture of high-protein fish and shellfish raised with zero chemical inputs.' })}</p>
                 </div>
 
-              </div>
-
-              <div className="mt-6">
-                <video
-                  className="w-full md:w-1/2 rounded-lg mx-auto"
-                  controls
-                  playsInline
-                >
-                  <source src="/mazavege_anime%231_fin.mp4" type="video/mp4" />
-                </video>
+                <div className="mt-6">
+                  <video
+                    className="w-full md:w-1/2 rounded-lg mx-auto"
+                    controls
+                    playsInline
+                  >
+                    <source src="/mazavege_anime%231_fin.mp4" type="video/mp4" />
+                  </video>
+                </div>
               </div>
             </div>
 
@@ -168,19 +167,18 @@ we offer the following three types of Mother Vegetable products:`
 
                 </div>
 
-              </div>
-
-              <div className="mt-6">
-                <video
-                  className="w-full md:w-1/2 rounded-lg mx-auto"
-                  controls
-                  playsInline
-                >
-                  <source src="/BizAnime_2.mp4" type="video/mp4" />
-                </video>
+                <div className="mt-6">
+                  <video
+                    className="w-full md:w-1/2 rounded-lg mx-auto"
+                    controls
+                    playsInline
+                  >
+                    <source src="/BizAnime_2.mp4" type="video/mp4" />
+                  </video>
+                </div>
               </div>
             </div>
-            
+
           </div>
          
         </div>
