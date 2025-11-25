@@ -84,7 +84,7 @@ we offer the following three types of Mother Vegetable products:`
 
                 <div className="mt-6">
                   <video
-                    className="w-full rounded-lg"
+                    className="w-1/3 rounded-lg"
                     controls
                     playsInline
                   >
@@ -172,7 +172,7 @@ we offer the following three types of Mother Vegetable products:`
 
                 <div className="mt-6">
                   <video
-                    className="w-full rounded-lg"
+                    className="w-1/3 rounded-lg"
                     controls
                     playsInline
                   >
