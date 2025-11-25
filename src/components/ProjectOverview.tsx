@@ -5,7 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 export default function ProjectOverview() {
   const { t } = useLanguage()
   return (
-    <section id="project-overview" className="pb-32 bg-black">
+    <section id="project-overview" className="pt-5 pb-32 bg-black">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -47,39 +47,41 @@ export default function ProjectOverview() {
               </div>
               
               {/* 地球最初の生命体とは */}
-              <div className="p-6 bg-green-500/10 border border-green-500/30 rounded-lg flex-grow">
-                <div className="flex justify-center my-6">
-                  <div>
-                    <h3 className="text-green-400 text-xl md:text-2xl font-semibold text-center mb-10">
-                      {t({ JP: 'Mother Vegetable', EN: 'Mother Vegetable' })}
-                    </h3>
-                    <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg">
-                      <img
-                        src="/mazavege.png"
-                        alt="マザーベジタブル"
-                        className="w-full h-full object-cover"
-                      />
+              <div className="p-6 bg-green-500/10 border border-green-500/30 rounded-lg flex-grow flex flex-col">
+                <div className="flex-grow">
+                  <div className="flex justify-center my-6">
+                    <div>
+                      <h3 className="text-green-400 text-xl md:text-2xl font-semibold text-center mb-10">
+                        {t({ JP: 'Mother Vegetable', EN: 'Mother Vegetable' })}
+                      </h3>
+                      <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg">
+                        <img
+                          src="/mazavege.png"
+                          alt="マザーベジタブル"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <p className="text-gray-300 leading-[1.9] whitespace-pre-line mb-4 text-sm md:text-base">
-                  {t({
-                    JP: `地球最初の植物であるマザーベジタブルが人類に至った進化を研究し以下の3種類のマザーベジタブルを提供します。`,
-                    EN: `By researching the evolutionary journey of Mother Vegetable, Earth's first vegetable, which culminated in humanity,
+                  <p className="text-gray-300 leading-[1.9] whitespace-pre-line mb-4 text-sm md:text-base">
+                    {t({
+                      JP: `地球最初の植物であるマザーベジタブルが人類に至った進化を研究し以下の3種類のマザーベジタブルを提供します。`,
+                      EN: `By researching the evolutionary journey of Mother Vegetable, Earth's first vegetable, which culminated in humanity,
 we offer the following three types of Mother Vegetable products:`
-                  })}
-                </p>
+                    })}
+                  </p>
 
-                <div className="space-y-2">
-                  <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '①食品', EN: '①Food' })}</p>
-                  <p className="text-white text-sm md:text-base">{t({ JP: '1つの生命体から人類に必要な48種類の栄養素を含む食品。', EN: 'Food derived from a single life form that provides all 48 nutrients essential for humanity.' })}</p>
+                  <div className="space-y-2">
+                    <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '①食品', EN: '①Food' })}</p>
+                    <p className="text-white text-sm md:text-base">{t({ JP: '1つの生命体から人類に必要な48種類の栄養素を含む食品。', EN: 'Food derived from a single life form that provides all 48 nutrients essential for humanity.' })}</p>
 
-                  <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '②スキンケア', EN: '②Skincare' })}</p>
-                  <p className="text-white text-sm md:text-base">{t({ JP: '皮膚の再生に効果のあるスキンケア。', EN: 'Skincare products designed to promote reverse aging effects for the skin.' })}</p>
+                    <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '②スキンケア', EN: '②Skincare' })}</p>
+                    <p className="text-white text-sm md:text-base">{t({ JP: '皮膚の再生に効果のあるスキンケア。', EN: 'Skincare products designed to promote reverse aging effects for the skin.' })}</p>
 
-                  <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '③魚貝類の養殖', EN: '③Aquaculture' })}</p>
-                  <p className="text-white text-sm md:text-base">{t({ JP: '化学物質を一切使用しない高タンパク質の魚貝類の養殖。', EN: 'Aquaculture of high-protein fish and shellfish raised with zero chemical inputs.' })}</p>
+                    <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '③魚貝類の養殖', EN: '③Aquaculture' })}</p>
+                    <p className="text-white text-sm md:text-base">{t({ JP: '化学物質を一切使用しない高タンパク質の魚貝類の養殖。', EN: 'Aquaculture of high-protein fish and shellfish raised with zero chemical inputs.' })}</p>
+                  </div>
                 </div>
 
                 <div className="mt-6">
@@ -106,65 +108,66 @@ we offer the following three types of Mother Vegetable products:`
               </div>
 
                {/* 驚異的なカーボンクレジット */}
-              <div className="p-6 bg-green-500/10 border border-green-500/30 rounded-lg flex-grow">
-                <div className="my-6">
-                  <h3 className="text-green-400 text-xl md:text-2xl font-semibold text-center mb-10">
-                    Small Earth Factory (SEF)
-                  </h3>
-                  <div className="flex flex-col md:flex-row justify-center gap-4">
-                    <div className="w-full md:max-w-xs h-48 rounded-xl overflow-hidden shadow-lg">
-                      <img
-                        src="/mv-factory-whole.jpg"
-                        alt="MOTHER VEGETABLE培養システム"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+              <div className="p-6 bg-green-500/10 border border-green-500/30 rounded-lg flex-grow flex flex-col">
+                <div className="flex-grow">
+                  <div className="my-6">
+                    <h3 className="text-green-400 text-xl md:text-2xl font-semibold text-center mb-10">
+                      Small Earth Factory (SEF)
+                    </h3>
+                    <div className="flex flex-col md:flex-row justify-center gap-4">
+                      <div className="w-full md:max-w-xs h-48 rounded-xl overflow-hidden shadow-lg">
+                        <img
+                          src="/mv-factory-whole.jpg"
+                          alt="MOTHER VEGETABLE培養システム"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
 
-                    <div className="w-full md:max-w-xs h-48 rounded-xl overflow-hidden shadow-lg">
-                      <img
-                        src="/mv-factory-greenhouse.jpg"
-                        alt="MOTHER VEGETABLEファクトリー建物"
-                        className="w-full h-full object-cover"
-                      />
+                      <div className="w-full md:max-w-xs h-48 rounded-xl overflow-hidden shadow-lg">
+                        <img
+                          src="/mv-factory-greenhouse.jpg"
+                          alt="MOTHER VEGETABLEファクトリー建物"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="space-y-2">
-                  <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '①Carbon Rebirth', EN: '①Carbon Rebirth' })}</p>
-                  <p className="text-white mb-3 text-sm md:text-base">{t({ JP: 'マザーベジタブル生産によるCO2の吸収（天然スギの700倍）およびO2の排出により小さな地球を再現。', EN: 'Recreating a small Earth through CO2 absorption (700 times that of natural cedar) and O2 emission by Mother Vegetable production.' })}</p>
+                  <div className="space-y-2">
+                    <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '①Carbon Rebirth', EN: '①Carbon Rebirth' })}</p>
+                    <p className="text-white mb-3 text-sm md:text-base">{t({ JP: 'マザーベジタブル生産によるCO2の吸収（天然スギの700倍）およびO2の排出により小さな地球を再現。', EN: 'Recreating a small Earth through CO2 absorption (700 times that of natural cedar) and O2 emission by Mother Vegetable production.' })}</p>
 
-                  <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '②ZERO Carbon Energy', EN: '②ZERO Carbon Energy' })}</p>
-                  <p className="text-white mb-3 text-sm md:text-base">{t({ JP: '外部電力、化石燃料などCO2を排出するエネルギーを一切使用しなく、小さな地球を再現。', EN: 'Recreating a small Earth without relying on any CO₂-emitting energy sources, including external electricity or fossil fuels.' })}</p>
+                    <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '②ZERO Carbon Energy', EN: '②ZERO Carbon Energy' })}</p>
+                    <p className="text-white mb-3 text-sm md:text-base">{t({ JP: '外部電力、化石燃料などCO2を排出するエネルギーを一切使用しなく、小さな地球を再現。', EN: 'Recreating a small Earth without relying on any CO₂-emitting energy sources, including external electricity or fossil fuels.' })}</p>
 
-                  <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '③カーボンクレジットの試算表', EN: '③Carbon Credit Estimation Table' })}</p>
-                  <p className="text-white text-sm md:text-base">{t({ JP: 'SEF 1 unit / 26m x 16m x 10階建 は面積にすると約0.5 ヘクタール。', EN: 'SEF 1 unit / 26m x 16m x 10 layers has an area of about 0.5 hectares.' })}</p>
-                
-                <p className="leading-relaxed text-sm md:text-base whitespace-pre-line">
-                    {t({
-                      JP: `一般的な0.5ヘクタールの天然スギのCO2吸収量は年間約4ton\nSEFはその700倍のCO2吸収量により年間約2,800tonとなる。`,
-                      EN: `A typical 0.5 hectare natural cedar forest absorbs about 4 tons of CO2 per year\nSEF absorbs 700 times more CO2, resulting in about 2,800 tons per year.`
-                    })}
-                  </p>
-                  <p className="leading-relaxed text-sm md:text-base whitespace-pre-line">
-                    {t({
-                      JP: `一般的なカーボンクレジットの価格は1tonあたり約4,000円\nSEFは2,800ton x 4,000円 = 11,200,000円 / 年 の収益性がある。`,
-                      EN: `The typical carbon credit price is about 25.8 USD per ton\nSEF has profitability of 2,800 tons x 25.8 USD = 72,240 USD / year.`
-                    })}
-                  </p>
+                    <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '③カーボンクレジットの試算表', EN: '③Carbon Credit Estimation Table' })}</p>
+                    <p className="text-white text-sm md:text-base">{t({ JP: 'SEF 1 unit / 26m x 16m x 10階建 は面積にすると約0.5 ヘクタール。', EN: 'SEF 1 unit / 26m x 16m x 10 layers has an area of about 0.5 hectares.' })}</p>
 
-                  <div className="mt-4 text-center">
-                    <a
-                      href="/download/carbon-credit"
-                      className="text-white text-xs hover:text-green-400 transition-colors underline"
-                    >
+                    <p className="leading-relaxed text-sm md:text-base whitespace-pre-line">
                       {t({
-                        JP: '金融機関向けカーボンクレジット試算表',
-                        EN: 'Carbon Credit Estimation Table for Financial Institutions'
+                        JP: `一般的な0.5ヘクタールの天然スギのCO2吸収量は年間約4ton\nSEFはその700倍のCO2吸収量により年間約2,800tonとなる。`,
+                        EN: `A typical 0.5 hectare natural cedar forest absorbs about 4 tons of CO2 per year\nSEF absorbs 700 times more CO2, resulting in about 2,800 tons per year.`
                       })}
-                    </a>
-                  </div>
+                    </p>
+                    <p className="leading-relaxed text-sm md:text-base whitespace-pre-line">
+                      {t({
+                        JP: `一般的なカーボンクレジットの価格は1tonあたり約4,000円\nSEFは2,800ton x 4,000円 = 11,200,000円 / 年 の収益性がある。`,
+                        EN: `The typical carbon credit price is about 25.8 USD per ton\nSEF has profitability of 2,800 tons x 25.8 USD = 72,240 USD / year.`
+                      })}
+                    </p>
 
+                    <div className="mt-4 text-center">
+                      <a
+                        href="/download/carbon-credit"
+                        className="text-white text-xs hover:text-green-400 transition-colors underline"
+                      >
+                        {t({
+                          JP: '金融機関向けカーボンクレジット試算表',
+                          EN: 'Carbon Credit Estimation Table for Financial Institutions'
+                        })}
+                      </a>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="mt-6">
