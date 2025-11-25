@@ -1,9 +1,36 @@
 'use client'
 
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useState, useRef } from 'react'
 
 export default function ProjectOverview() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const [isMuted1, setIsMuted1] = useState(true)
+  const [isMuted2, setIsMuted2] = useState(true)
+  const videoRef1 = useRef<HTMLVideoElement>(null)
+  const videoRef2 = useRef<HTMLVideoElement>(null)
+
+  const toggleMute1 = () => {
+    const video = videoRef1.current
+    if (!video) return
+    const nextMuted = !isMuted1
+    video.muted = nextMuted
+    if (video.paused) {
+      void video.play().catch(() => {})
+    }
+    setIsMuted1(nextMuted)
+  }
+
+  const toggleMute2 = () => {
+    const video = videoRef2.current
+    if (!video) return
+    const nextMuted = !isMuted2
+    video.muted = nextMuted
+    if (video.paused) {
+      void video.play().catch(() => {})
+    }
+    setIsMuted2(nextMuted)
+  }
   return (
     <section id="project-overview" className="pt-5 pb-32 bg-black">
       <div className="container mx-auto px-4">
@@ -85,13 +112,62 @@ we offer the following three types of Mother Vegetable products:`
                 </div>
 
                 <div className="mt-6">
-                  <video
-                    className="w-full md:w-1/2 rounded-lg mx-auto"
-                    controls
-                    playsInline
-                  >
-                    <source src="/mazavege_anime%231_fin.mp4" type="video/mp4" />
-                  </video>
+                  <div className="relative w-full md:w-1/2 mx-auto">
+                    <video
+                      ref={videoRef1}
+                      className="w-full h-auto rounded-lg"
+                      src="/mazavege_anime%231_fin.mp4"
+                      autoPlay
+                      loop
+                      muted={isMuted1}
+                      playsInline
+                    />
+                    <button
+                      onClick={toggleMute1}
+                      aria-label={
+                        isMuted1
+                          ? language === 'JP'
+                            ? 'ミュート解除'
+                            : 'Unmute'
+                          : language === 'JP'
+                          ? 'ミュート'
+                          : 'Mute'
+                      }
+                      className="absolute bottom-4 right-4 inline-flex items-center justify-center rounded-full bg-black/40 px-3 py-3 text-white backdrop-blur-md transition hover:bg-black/60"
+                    >
+                      {isMuted1 ? (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-5 w-5"
+                        >
+                          <path d="M4 9v6h3l4 3V6l-4 3H4z" />
+                          <line x1="16" y1="9" x2="20" y2="13" />
+                          <line x1="20" y1="9" x2="16" y2="13" />
+                        </svg>
+                      ) : (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-5 w-5"
+                        >
+                          <path d="M4 9v6h3l4 3V6l-4 3H4z" />
+                          <path d="M16 9a4 4 0 0 1 0 6" />
+                          <path d="M18.5 7.5a7 7 0 0 1 0 9" />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -171,13 +247,62 @@ we offer the following three types of Mother Vegetable products:`
                 </div>
 
                 <div className="mt-6">
-                  <video
-                    className="w-full md:w-1/2 rounded-lg mx-auto"
-                    controls
-                    playsInline
-                  >
-                    <source src="/BizAnime_2.mp4" type="video/mp4" />
-                  </video>
+                  <div className="relative w-full md:w-1/2 mx-auto">
+                    <video
+                      ref={videoRef2}
+                      className="w-full h-auto rounded-lg"
+                      src="/BizAnime_2.mp4"
+                      autoPlay
+                      loop
+                      muted={isMuted2}
+                      playsInline
+                    />
+                    <button
+                      onClick={toggleMute2}
+                      aria-label={
+                        isMuted2
+                          ? language === 'JP'
+                            ? 'ミュート解除'
+                            : 'Unmute'
+                          : language === 'JP'
+                          ? 'ミュート'
+                          : 'Mute'
+                      }
+                      className="absolute bottom-4 right-4 inline-flex items-center justify-center rounded-full bg-black/40 px-3 py-3 text-white backdrop-blur-md transition hover:bg-black/60"
+                    >
+                      {isMuted2 ? (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-5 w-5"
+                        >
+                          <path d="M4 9v6h3l4 3V6l-4 3H4z" />
+                          <line x1="16" y1="9" x2="20" y2="13" />
+                          <line x1="20" y1="9" x2="16" y2="13" />
+                        </svg>
+                      ) : (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-5 w-5"
+                        >
+                          <path d="M4 9v6h3l4 3V6l-4 3H4z" />
+                          <path d="M16 9a4 4 0 0 1 0 6" />
+                          <path d="M18.5 7.5a7 7 0 0 1 0 9" />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
