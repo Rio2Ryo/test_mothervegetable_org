@@ -19,7 +19,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-black">
-     {/* Main Footer Content 
+      {/* Main Footer Content 
       <div className="container mx-auto px-4 py-12">
         <div className="w-full md:w-full h-1.5 bg-gradient-to-r from-transparent via-green-400 to-transparent mx-auto rounded-full mt-0 opacity-80 mb-14"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -79,6 +79,37 @@ export default function Footer() {
 
         {/* Title */}
         <h3 className="text-[clamp(8px,2vw,10px)] md:text-sm font-bold text-[#25C760] text-center mb-3">Mother Vegetable Group</h3>
+
+        {/* Official Page Link */}
+        <a
+          href="https://www.mothervegetable.org/"
+          onClick={(e) => {
+            e.preventDefault()
+            const homeSection = document.getElementById('home')
+            const targetPosition = homeSection ? homeSection.offsetTop : 0
+            const startPosition = window.pageYOffset
+            const distance = targetPosition - startPosition
+            const duration = 1000
+            let start: number | null = null
+
+            const animation = (currentTime: number) => {
+              if (start === null) start = currentTime
+              const timeElapsed = currentTime - start
+              const progress = Math.min(timeElapsed / duration, 1)
+              const ease = progress < 0.5
+                ? 4 * progress * progress * progress
+                : 1 - Math.pow(-2 * progress + 2, 3) / 2
+              window.scrollTo(0, startPosition + distance * ease)
+              if (timeElapsed < duration) {
+                requestAnimationFrame(animation)
+              }
+            }
+            requestAnimationFrame(animation)
+          }}
+          className="block text-[clamp(8px,2vw,10px)] md:text-sm font-medium text-[#25C760] text-center mb-3 cursor-pointer"
+        >
+          Official Page
+        </a>
 
         {/* Countries Grid - 3 rows on mobile, one line on desktop */}
         <div className="grid grid-cols-6 md:hidden gap-x-1 gap-y-1 mx-auto text-center max-w-5xl">
