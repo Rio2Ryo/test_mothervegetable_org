@@ -234,7 +234,7 @@ export default function Partners() {
         JP: "河津町との連携による海洋事業開発とMother Vegetable事業の推進。全国の漁業組合の連絡窓口を実施。",
         EN: "Promoting marine business development and Mother Vegetable business through collaboration with Kawazu Town. Implementing communication channels for fishery associations nationwide."
       }),
-      image: "/sfc.jpeg",
+      image: "/nsfc.jpg",
       url: "https://www.nsfpcouncil.com/"
     },
     
