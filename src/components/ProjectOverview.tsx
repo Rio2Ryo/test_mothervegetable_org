@@ -256,8 +256,8 @@ we offer the following three types of Mother Vegetable products:`
                     </p>
                     <p className="leading-relaxed text-sm md:text-base whitespace-pre-line">
                       {t({
-                        JP: `一般的なカーボンクレジットの価格は1tonあたり約4,000円\nSEFは2,800ton x 4,000円 = 11,200,000円 / 年 の収益性がある。`,
-                        EN: `The typical carbon credit price is about 25.8 USD per ton\nSEF has profitability of 2,800 tons x 25.8 USD = 72,240 USD / year.`
+                        JP: `一般的なカーボンクレジットの価格は1tonあたり約4,000円\nSEFは2,800ton x 4,000円 = 11,200,000円 / 年 の収益収益を実現。世界では約514兆円（English: 3,300 billion USD）規模のカーボンオフセット市場と予測されており、その需要に貢献する。`,
+                        EN: `The typical carbon credit price is about 25.8 USD per ton.\nSEF achieves revenue of 2,800 tons x 25.8 USD = 72,240 USD / year. The global carbon offset market is projected to reach approximately 3,300 billion USD, and we contribute to meeting this demand.`
                       })}
                     </p>
 
